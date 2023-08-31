@@ -8,26 +8,25 @@ function submit() {
 }
 
 
-//paractice 1
-
-// function create2() {
-//     const listValue = + document.querySelector('#list').value;
-//     const output = document.querySelector('#output');
-
-//     // Clear previous content
-//     output.innerHTML = listValue;
 
 
-//     const itemCount = 5;
+function create2() {
+    const listValue = + document.querySelector('#list').value;
+    const output = document.querySelector('#output');
 
-//     for (let i = 1; i <= 10; i++) {
-//         const listItem = document.createElement('p');
-//         listItem.textContent = `${listValue} - Item ${i}`;
-//         output.appendChild(listItem);
-//     }
-// }
+    // Clear previous content
+    output.innerHTML = listValue;
 
-//practice 2
+
+    const itemCount = 5;
+
+    for (let i = 1; i <= 10; i++) {
+        const listItem = document.createElement('p');
+        listItem.textContent = `${listValue} - Item ${i}`;
+        output.appendChild(listItem);
+    }
+}
+
 
 
 // const additem = document.querySelector("#send");
@@ -49,12 +48,9 @@ function submit() {
 // }
 
 
-
-//solution .....
-
-const additem = document.querySelector("#send");
+const additem = document.querySelector("#add");
 const arry = document.querySelector("#list");
-
+const errormassage = document.querySelector("#error-message")
 const arr = [];
 
 function create() {
@@ -66,14 +62,24 @@ function create() {
 
     for (let g = 0; g < arr.length; g++) {
         const item = arr[g];
-        arry.innerHTML += `<li>${item}</li> 
+        arry.innerHTML += `<li>${item}</li>  
         <button onclick="deletelist(${g})">Delete</button>
-        <button onclick="editlist(${g})">Edit</button>`
+        <button onclick="editlist(${g})">Edite</button>`
         ;
     }
+    // if (arry.value =="") {
+    //     alert("plese enter the value")
+        
+    // } 
+    // if (additem.value ==''){
+    //     errormassage.textContent ='please enter the value'
+    // }
+
+
+
+        
+    
 }
-
-
 
 
 function deletelist(index) {
@@ -101,9 +107,5 @@ function render() {
         <button onclick="editlist(${g})">Edite</button>`
         ;
     }
-    
+
 }
-
-
-
-
