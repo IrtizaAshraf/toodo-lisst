@@ -67,15 +67,13 @@ function create() {
         <button onclick="editlist(${g})">Edite</button>`
         ;
     }
-    // if (arry.value =="") {
-    //     alert("plese enter the value")
+    if (arry.value =="") {
+        alert("plese enter the value")
         
-    // } 
-    // if (additem.value ==''){
-    //     errormassage.textContent ='please enter the value'
-    // }
-
-
+    } 
+    if (additem.value ==''){
+        errormassage.textContent ='please enter the value'
+    }
 
         
     
