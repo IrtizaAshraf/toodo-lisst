@@ -54,25 +54,25 @@ const errormassage = document.querySelector("#error-message")
 const arr = [];
 
 function create() {
-    arr.push(additem.value);
-    console.log(arr);
-    additem.value = "";
-
-    arry.innerHTML = ""; // Clear the previous list content
-
-    for (let g = 0; g < arr.length; g++) {
-        const item = arr[g];
-        arry.innerHTML += `<li>${item}</li>  
-        <button onclick="deletelist(${g})">Delete</button>
-        <button onclick="editlist(${g})">Edite</button>`
-        ;
-    }
-    if (arry.value =="") {
+    if (additem.value =="") {
         alert("plese enter the value")
         
     } 
-    if (additem.value ==''){
-        errormassage.textContent ='please enter the value'
+    
+    else{
+        arr.push(additem.value);
+        console.log(arr);
+        additem.value = "";
+    
+        arry.innerHTML = ""; // Clear the previous list content
+    
+        for (let g = 0; g < arr.length; g++) {
+            const item = arr[g];
+            arry.innerHTML += `<li>${item}</li>  
+            <button onclick="deletelist(${g})">Delete</button>
+            <button onclick="editlist(${g})">Edite</button>`
+            ;
+        }
     }
 
         
@@ -88,7 +88,12 @@ function deletelist(index) {
 
 function editlist(index) {
    const content = prompt('Edit task:', arr[index]);
-    if (content !== null) {
+    if (content === "") {
+        arr[index] = content ;
+        // render();
+        alert("please Enter the value")
+    }
+    else{
         arr[index] = content ;
         render();
     }
@@ -107,3 +112,41 @@ function render() {
     }
 
 }
+
+
+
+
+
+
+
+
+
+// const addlist = document.querySelector("#add");
+// const arrry = document.querySelector("#list");
+// const erroermassage = document.querySelector("#error-message")
+// const todo = [];
+
+// function todolist() {
+//     switch(addlist){
+//         addlist.value =='';
+//         alert("please enter the value")
+//             break;
+    
+//         default:
+            
+//             todo.push(addlist.value);
+//             console.log(todo);
+//             addlist.value = "";
+//             arrry.innerHTML = ""; // Clear the previous list content
+//             for (let h = 0; h < todo.length; h++) {
+//             const item = todo[h];
+//             arrry.innerHTML += `<li>${item}</li>  
+//             <button onclick="deletelist(${h})">Delete</button>
+//             <button onclick="editlist(${h})">Edite</button>`;
+//          }
+
+//         break;
+              
+//     }
+// }
+
