@@ -159,21 +159,51 @@ function deletvalue(index) {
     todo.splice(index, 1)
     addlist.value = '';
     arrry.innerHTML = '';
+    // for (let g = 0; g < todo.length; g++) {
+    //     const item = todo[g];
+    //     arrry.innerHTML += `<li>${item}</li>  
+    //          <button onclick="deletvalue(${g})">Delete</button>
+    //          <button onclick="editvalue(${g})">Edite</button>`
+    //         ;
+    // }
+    renders()
+
+}
+
+
+function editvalue(index) {
+    const content = prompt('Edit task:', todo[index]);
+    // if (content === "") {
+    //     todo[index] = content ;
+    //     renders();
+    //     alert("please Enter the value")
+    // }
+    // else{
+    //     todo[index] = content ;
+    //     renders();
+    // }
+    switch (content) {
+        case '':
+            // todo.splice(index,1, content)
+            renders()
+            alert("bhai jan  value daydoo")
+            break;
+    
+        default:
+            todo.splice(index, 1, content)
+            renders()
+            break;
+    }
+   
+}
+
+function renders() {
+    arrry.innerHTML='';
     for (let g = 0; g < todo.length; g++) {
         const item = todo[g];
         arrry.innerHTML += `<li>${item}</li>  
              <button onclick="deletvalue(${g})">Delete</button>
              <button onclick="editvalue(${g})">Edite</button>`
             ;
-    }
-
-}
-
-
-function editvalue(index) {
-    const todolist = +prompt("Change the Value", todo[index]) 
-    todo.splice(index, 1, todolist)
-
-
-    
+    }   
 }
